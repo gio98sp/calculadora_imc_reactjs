@@ -1,3 +1,4 @@
+import { Button } from './Button';
 import './ImcCalc.css';
 
 export const ImcCalc = () => {
@@ -16,8 +17,8 @@ export const ImcCalc = () => {
           </div>
         </div>
         <div className="action-control">
-          <button>Calcular</button>
-          <button>Limpar</button>
+          <Button id="calc-btn" text='calcular' />
+          <Button id="clear-btn" text='Limpar' />
         </div>
       </form>
     </div>
