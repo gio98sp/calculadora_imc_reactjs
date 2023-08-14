@@ -1,24 +1,25 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react';
 import { Button } from './Button';
 import './ImcCalc.css';
 
-export const ImcCalc = () => {
+export const ImcCalc = ({ calcImc }) => {
   const [height, setHeight] = useState('');
   const [weight, setWeight] = useState('');
 
   const validDigits = (text) => {
-    return text.replace(/[^0-9,]/g, '')
-  }
+    return text.replace(/[^0-9,]/g, '');
+  };
 
   const handleHeightChange = (e) => {
-    const updateValue = validDigits(e.target.value)
-    setHeight(updateValue)
-  }
+    const updateValue = validDigits(e.target.value);
+    setHeight(updateValue);
+  };
 
   const handleWeightChange = (e) => {
-    const updateValue = validDigits(e.target.value)
-    setWeight(updateValue)
-  }
+    const updateValue = validDigits(e.target.value);
+    setWeight(updateValue);
+  };
 
   const clearForm = (e) => {
     e.preventDefault();
@@ -55,7 +56,7 @@ export const ImcCalc = () => {
           </div>
         </div>
         <div className="action-control">
-          <Button id="calc-btn" text="calcular" />
+          <Button id="calc-btn" text="Calcular" action={(e) => calcImc(e, height, weight)} />
           <Button id="clear-btn" text="Limpar" action={clearForm} />
         </div>
       </form>
